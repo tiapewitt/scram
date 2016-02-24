@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<%= @submission.title %>
+	</div>
+	<div class = "panel-body">
+		<%= image_tag @submission.user.avatar(:thumb) %><br>
+		by <strong><%= @submission.user.first_name %></strong> <br><span class="posted-at"><%= @submission.created_at.strftime('%e %B %Y') %><br />
+		<p><%= @submission.my_story %></p><br />
+	</div>
+</div>
+
+<div>
+<% if current_user.id == @submission.user.id %>
+	<%= link_to 'Edit', edit_submission_path(@submission) %> | 
+	<%= link_to 'Back', submissions_path %>
+<% else %>
+	
+	<p>This submission currently has 	  <%= @submission.get_upvotes.size %> votes.</p>
+	<%= link_to vote_submission_path(@submission), class: "btn btn-success", method: :put do %>
+	  Vote For <%= @submission.user.first_name %>!
+	<% end %>
+
+<% end %>
+</div>
+<br />
+
+<div class = "panel panel-success">
+	<div class="panel-heading">
+		Make a Comment
+	</div>
+	<div class="panel-body">
+		<%= render 'comments/form' %>
+	</div>
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-header">
+		<h4>Comments</h4>
+	</div>
+	<% @submission.comments.each do |comment| %>
+			<div class="panel-body">
+				<p><strong><%= comment.user.first_name %></strong> said: </p>
+				<p><%= comment.comment_entry %></p>
+				<p><span class="posted-at"><%= comment.created_at.strftime('%e %B %Y') %></span></p>
+			</div>
+	<% end %>
+</div>

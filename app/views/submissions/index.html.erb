@@ -1,0 +1,28 @@
+<h1>All Submissions</h1>
+
+<div class="row">
+    <% @submissions.each do |submission| %>
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <%= link_to submission.title, submission %>
+          </div>
+          <div class="panel-body">
+            <%= image_tag submission.user.avatar(:thumb) %><br>
+            by <%= submission.user.first_name %><br />
+            <span class="posted-at"><%= submission.created_at.strftime('%e %B %Y') %></span><br />
+            <p><%= submission.my_story[0..200]%>... <%= link_to "Read More", submission %></p><br>
+
+          </div>
+        <% if current_user.id == submission.user.id %>
+          <div class="panel-footer">
+            <%= link_to 'Edit', edit_submission_path(submission), class: "btn btn-warning" %>
+            <%= link_to 'Delete', submission, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          </div>
+        <% end %>
+        </div>
+      </div>
+    <% end %>
+</div>
+
+<%= link_to 'New Submission', new_submission_path %>

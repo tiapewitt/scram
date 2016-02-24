@@ -1,0 +1,28 @@
+<%= simple_form_for(@submission) do |f| %>
+  <% if @submission.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@submission.errors.count, "error") %> prohibited this submission from being saved:</h2>
+
+      <ul>
+      <% @submission.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :title, class:"sr-only" %>
+    <%= f.text_field :title, class: "form-control", placeholder: "Your Title" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :my_story, class:"sr-only" %>
+    <%= f.text_area :my_story, class: "form-control", :rows => 10, placeholder: "Inspire Us!" %>
+  </div>
+  <div class="form-group cant-see-me">
+    <%= f.number_field :user_id, value: current_user.id %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
