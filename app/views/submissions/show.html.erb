@@ -5,21 +5,21 @@
 		<%= @submission.title %>
 	</div>
 	<div class = "panel-body">
-		<%= image_tag @submission.user.avatar(:thumb) %><br>
-		by <strong><%= @submission.user.first_name %></strong> <br><span class="posted-at"><%= @submission.created_at.strftime('%e %B %Y') %><br />
+		<%= image_tag @submission.user(:thumb) %><br>
+		by <strong><%= @submission.user %></strong> <br><span class="posted-at"><%= @submission.created_at.strftime('%e %B %Y') %><br />
 		<p><%= @submission.my_story %></p><br />
 	</div>
 </div>
 
 <div>
-<% if current_user.id == @submission.user.id %>
+<% if current_user == @submission.user %>
 	<%= link_to 'Edit', edit_submission_path(@submission) %> | 
 	<%= link_to 'Back', submissions_path %>
 <% else %>
 	
 	<p>This submission currently has 	  <%= @submission.get_upvotes.size %> votes.</p>
 	<%= link_to vote_submission_path(@submission), class: "btn btn-success", method: :put do %>
-	  Vote For <%= @submission.user.first_name %>!
+	  Vote For <%= @submission.user_id %>!
 	<% end %>
 
 <% end %>

@@ -6,6 +6,10 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'cancancan', '~> 1.10'
 gem 'simple_form'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem 'figaro'
+gem 'table_print'
+gem 'stripe', :git => "https://github.com/stripe/stripe-ruby"
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'

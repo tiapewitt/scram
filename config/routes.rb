@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
+
   devise_for :users
+
   resources :comments
   resources :submissions do
     member do
       put "vote", to: "submissions#upvote"
     end
   end
-
-  get 'featured' => 'submissions#featured'
-  
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -17,6 +17,11 @@ Rails.application.routes.draw do
   root 'submissions#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
+  get 'featured' => 'featured#index'
+ 
+  get '/your_submission'=>'submissions#your_submission'
+  get '/user_submission'=>'submissions#user_submission'
+  get 'users' => 'users#show', as: :user
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
