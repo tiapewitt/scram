@@ -2,6 +2,8 @@ class DonationsController < ApplicationController
 
 
 def new
+  @submission = Submission.find(params[:id])
+  @submission = Submission.all
 end
 
 def show
