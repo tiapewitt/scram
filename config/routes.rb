@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   devise_for :users
-
+  resources :donations
+  resources "contacts", only: [:new, :create]
   resources :comments
   resources :submissions do
     member do
@@ -18,7 +19,9 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   get 'featured' => 'featured#index'
- 
+  get 'donations' => 'donations#new'
+  get 'contacts' => 'contacts#new'
+  get 'about' => 'donations#about'
   get '/your_submission'=>'submissions#your_submission'
   get '/user_submission'=>'submissions#user_submission'
   get 'users' => 'users#show', as: :user

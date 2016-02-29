@@ -6,13 +6,13 @@
 	</div>
 	<div class = "panel-body">
 		<%= image_tag @submission.user(:thumb) %><br>
-		by <strong><%= @submission.user %></strong> <br><span class="posted-at"><%= @submission.created_at.strftime('%e %B %Y') %><br />
+		by <strong><%= @submission.user.id %></strong> <br><span class="posted-at"><%= @submission.created_at.strftime('%e %B %Y') %><br />
 		<p><%= @submission.my_story %></p><br />
 	</div>
 </div>
 
 <div>
-<% if current_user == @submission.user %>
+<% if current_user.id == @submission.user.id %>
 	<%= link_to 'Edit', edit_submission_path(@submission) %> | 
 	<%= link_to 'Back', submissions_path %>
 <% else %>

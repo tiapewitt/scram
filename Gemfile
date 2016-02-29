@@ -9,6 +9,7 @@ gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'figaro'
 gem 'table_print'
 gem 'stripe', :git => "https://github.com/stripe/stripe-ruby"
+gem 'mail_form'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
