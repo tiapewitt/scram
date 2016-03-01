@@ -1,0 +1,31 @@
+
+<div class="row">
+    <% @submissions.each do |submission| %>
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <%= link_to submission.title, submission %>
+          </div>
+          <div class="panel-body">
+            <%= image_tag submission.user.avatar(:thumb) %><br>
+            by <%= submission.user.first_name %><br />
+            <span class="posted-at"><%= submission.created_at.strftime('%e %B %Y') %></span><br />
+            <p><%= submission.my_story[0..200]%>... <%= link_to "Read More", submission %></p><br>
+
+            <% if current_user.id == submission.user.id %>
+              <%= link_to 'Edit', edit_submission_path(submission) %> | 
+              <%= link_to 'Back', submissions_path %>
+            <% else %>
+              <%= link_to vote_submission_path(submission), class: 'vote', method: :put do %>
+                <button type="button" class="btn btn-info" aria-label="Left Align">
+                  <span class='glyphicon glyphicon-arrow-up'aria-hidden='true'>
+                  </span>
+                  <span class='badge'><%= submission.get_upvotes.size %></span>
+                </button>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>

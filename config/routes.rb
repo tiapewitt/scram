@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   root 'submissions#home'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
+  get 'featured' => 'submissions#featured'
   get 'featured' => 'featured#index'
   get 'donations' => 'donations#new'
   get 'contacts' => 'contacts#new'
