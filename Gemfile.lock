@@ -139,6 +139,7 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails_layout (1.0.29)
     railties (4.2.5)
       actionpack (= 4.2.5)
       activesupport (= 4.2.5)
@@ -214,6 +215,7 @@ DEPENDENCIES
   mail_form
   paperclip!
   rails (= 4.2.5)
+  rails_layout
   rename
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

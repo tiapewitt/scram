@@ -1,20 +1,4 @@
 
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE-edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.indigo-pink.min.css">
-  <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' %>
-<!--  <link type="text/css" rel="stylesheet" href="contacts.scss"> -->
-
-  <%= stylesheet_link_tag  'contacts', media: 'all' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
   
   <!-- Uses a transparent header that draws on top of the layout's background -->
 <style>
@@ -23,7 +7,7 @@
 .layout-transparent .mdl-layout__drawer-button {
   /* This background is dark, so we set text to white. Use 87% black instead if
      your background is light. */
-  color: white;
+  color: black;
 }
 </style>
 
@@ -53,9 +37,9 @@
 <div class="jumbotron">
   <div align="center">
   <h3>Send A Message to Us</h3>
-  <div class="container-fluid">
+  <div class="container">
 <form class="form-group">
-  <%= simple_form_for @contact, :html => {:class => 'form-group' } do |f| %>
+  <%= simple_form_for Contact.new :html => {:class => 'form-group' } do |f| %>
     <%= f.input :name, :required => true, placeholder: "Name" %>
     <%= f.input :email, :required => true, placeholder: "Email" %>
     <%= f.input :message, :as => :text, :required => true, placeholder: "Enter Message Here" %>
@@ -72,14 +56,3 @@
 </div>
 
 </div>
-  
-<div class="container-fluid">
-  <%= yield %>
-</div>
-  
-
-  <script defer src="https://code.getmdl.io/1.1.1/material.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-</body>
-</html>

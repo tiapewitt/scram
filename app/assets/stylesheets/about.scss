@@ -1,5 +1,5 @@
 body{
-	background: url("http://s8.postimg.org/8ijtk4b0l/trailjohnrock1.jpg");
+	
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
@@ -10,6 +10,10 @@ body{
 	margin-top: 80px;
 	opacity: 0.90;
 	font-weight: 450px;	
+}
+
+.mdl-layout__content {
+	z-index: 0;
 }
 
 .mdl-layout__drawer{

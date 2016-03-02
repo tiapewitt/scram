@@ -101,4 +101,4 @@ end
     def submission_params
       params.require(:submission).permit(:avatar, :title, :applicant, :my_story, :user_id, :first_name, :last_name, :role)
     end
-  end
+end
