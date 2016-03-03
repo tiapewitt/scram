@@ -30,6 +30,10 @@ end
   Submission.order(:cached_weighted_average => :desc)
   end
 
+    def featured
+    @submissions = Submission.all.order(:cached_votes_score => :desc).limit(5)
+  end
+
   # GET /submissions/new
   def new
     @submission = Submission.new
@@ -37,6 +41,7 @@ end
 
   # GET /submissions/1/edit
   def edit
+    @submission = Submission.find(params[:id])
   end
 
   # POST /submissions

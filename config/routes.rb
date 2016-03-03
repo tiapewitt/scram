@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'submissions#home'
+  root 'submissions#featured'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   get 'featured' => 'submissions#featured'
@@ -23,8 +23,7 @@ Rails.application.routes.draw do
   get 'donations' => 'donations#new'
   get 'contacts' => 'contacts#new'
   get 'about' => 'donations#about'
-  get '/your_submission'=>'submissions#your_submission'
-  get '/user_submission'=>'submissions#user_submission'
+
   get 'users' => 'users#show', as: :user
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

@@ -1,8 +1,45 @@
+<%= render 'shared/navbar' %>
 
+<br>
+<main class="all submissions">
+  <!-- Uses a transparent header that draws on top of the layout's background -->
+<style>
+.all_submissions{
+  background: url('http://s24.postimg.org/ac55910lh/trailjohnrock1_3.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.jumbotron{
+  vertical-align: center;
+  text-align: center;
+  margin-top: 60px;
+  opacity: 0.90;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 450px; 
+  margin-left: 150px;
+  margin-right: 150px;
+
+}
+
+</style>
+
+<div class="jumbotron">
+  <div align="center">
 <h1>All Submissions</h1>
+
 
 <%= render 'index' %>
 ​
 <% if can? :create, Submission %>
 <%= link_to 'New Submission', new_submission_path %>
 <% end %>
+</div>
+
+
+
+</div>
+</div>
+
+</main>

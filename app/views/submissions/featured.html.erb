@@ -1,0 +1,73 @@
+
+
+<div class="container-fluid">
+    <div class="c-wrapper">
+      <div id="carousel-example-generic" class="carousel slide carousel-fade">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <%= image_tag 'carousel3.png' %>
+            <div class="carousel-caption">
+              <h2>Get Out of Town.</h2>
+            </div>
+          </div>
+          <div class="item">
+            <%= image_tag 'carousel1.png' %>
+            <div class="carousel-caption">
+              <h2>Build Your Path.</h2>
+            </div>
+          </div>
+          <div class="item">
+            <%= image_tag 'carousel2.png' %>
+            <div class="carousel-caption">
+              <h2>Find Your Place In the World.</h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <center>
+        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+          <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+          <span class="icon-next"></span>
+        </a>
+        </center>
+      </div>
+    </div>
+  </div>
+
+<div class="container-fluid title">
+		<h2>Featured Submissions</h2>
+		<center><div class="btn-group">
+  <button type="button" class="btn btn-danger btn-lg">Scram</button>
+  <button type="button" class="btn btn-danger btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="caret"></span>
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu">
+        <li><%= link_to 'All Submissions', submissions_path %></li>
+          <li><%= link_to 'Featured', root_url %></li>
+<!--           <li><%= link_to 'Donations', donations_path %></li> -->
+          <li><%= link_to 'About', about_path %></li>
+          <li><%= link_to 'Contact', contacts_path %></li>
+  </ul>
+</div>
+
+  </ul>
+</div></center>
+</div>
+
+<%= render 'index' %>
+
+<% if can? :create, Submission %>
+<%= link_to 'New Submission', new_submission_path %>
+<% end %>

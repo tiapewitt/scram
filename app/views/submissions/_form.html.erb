@@ -1,3 +1,4 @@
+<div class="container submission_form">
 <%= simple_form_for(@submission) do |f| %>
   <% if @submission.errors.any? %>
     <div id="error_explanation">
@@ -26,3 +27,4 @@
     <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
+</div>

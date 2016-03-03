@@ -1,33 +1,52 @@
-<style>
 
-.layout-transparent .mdl-layout__header,
-.layout-transparent .mdl-layout__drawer-button {
-  /* This background is dark, so we set text to white. Use 87% black instead if
-     your background is light. */
-  color: white;
+<main class="about">
+  <!-- Uses a transparent header that draws on top of the layout's background -->
+<style>
+.about{
+  background: url('http://s15.postimg.org/bxz48tzx7/Hilo_view_flowers.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.jumbotron{
+  vertical-align: center;
+  text-align: center;
+  margin-top: 60px;
+  opacity: 0.90;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 450px; 
+  margin-left: 150px;
+  margin-right: 150px;
+
+}
+
+.form-group {
+  margin: 0 auto;
+  width: 75%;
+  margin-left: 98px;
 }
 </style>
 
-<div class="layout-transparent mdl-layout mdl-js-layout">
-  <header class="mdl-layout__header mdl-layout--fixed-header mdl-layout__header--transparent">
-    <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">About</span>
-  </header>
-  <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Scram</span>
-    <nav class="mdl-navigation">
-        <li class="mdl-navigation__link"><%= link_to 'All Submissions', submissions_path %></li>
-          <li class="mdl-navigation__link"><%= link_to 'Featured', root_url %></li>
+  
+ <!-- Split button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-danger btn-lg">About Us</button>
+  <button type="button" class="btn btn-danger btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="caret"></span>
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu">
+        <li><%= link_to 'All Submissions', submissions_path %></li>
+          <li><%= link_to 'Featured', root_url %></li>
 <!--           <li><%= link_to 'Donations', donations_path %></li> -->
-          <li class="mdl-navigation__link"><%= link_to 'About', about_path %></li>
-          <li class="mdl-navigation__link"><%= link_to 'Contact', contacts_path %></li>
-<!--       <a class="mdl-navigation__link" href="">Featured</a>
-      <a class="mdl-navigation__link" href="">All Submissions</a>
-      <a class="mdl-navigation__link" href="">About</a>
-      <a class="mdl-navigation__link" href="">Contact</a> -->
-    </nav>
-  </div>
- <main class="mdl-layout__content">
+          <li><%= link_to 'About', about_path %></li>
+          <li><%= link_to 'Contact', contacts_path %></li>
+  </ul>
+</div>
+    
+<div class="jumbotron">
+  <div align="center">
 <p>
   <h1>Scram!</h1>
   <h3>It's time to go...</h3>
@@ -35,10 +54,13 @@
   <p>Do you have a vision to share, but can't get there? </p>
   <p>Through Scram, we offer youth the opportunity to travel with grants provided by the community.<br> Look at our Submissions page.<br>If you are a young person with a mission, please sign up and share a video essay about where you want to go and what volunteer opportunity you are interested in.  Your submission will be live for one month.<br>Share your submission via social media, with your friends, family and colleagues.<br>Get votes! Get Donations!<br>The youth with the most votes will receive the donations for that month.</p>
   <p>Requirements: </p>
-  <p>* Must be between 16 and 21 years of age</p>
+  <p>* Must be between 16 and 24 years of age</p>
   <p>* Must be willing and able to travel within 1 year of winning</p>
   <p>* Must have a valid volunteer opportunity at your travel destination</p>
   <p>* Share your experience by blogging and sharing photos about your experience</p>
 </p>
-  </main>
+
 </div>
+</div>
+
+</main>

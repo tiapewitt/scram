@@ -1,11 +1,16 @@
-body{
-	
+.about{
+	background: url('http://s16.postimg.org/5yrebvgyd/trailjohnrock1_2.jpg');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
 
 }
 
+.layout-transparent .mdl-layout__header,
+.layout-transparent .mdl-layout__drawer-button {
+ 
+  color: black;
+}
 .jumbotron{
 	margin-top: 80px;
 	opacity: 0.90;
